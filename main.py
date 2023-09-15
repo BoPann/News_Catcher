@@ -11,7 +11,7 @@ LANGUAGE = 'zh-tw' # The language that the news will be translated into
 response = requests.get(URL)
 soup = BeautifulSoup(response.text, 'html.parser')
 news_names_spans = soup.select("div._gobbet")
-news = [song.getText().strip() for song in news_names_spans]
+news = [new.getText().strip() for new in news_names_spans]
 
 # get the date
 today = dt.datetime.now(); 
